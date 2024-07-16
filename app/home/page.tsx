@@ -46,7 +46,7 @@ const PictoraLandingPage = () => {
                         <div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">AI Enthusiast</h4>
                             <p className="text-gray-600">
-                                A passionate developer and AI researcher dedicated to pushing the boundaries of what's possible with artificial intelligence and image generation.
+                                A passionate developer and AI researcher dedicated to pushing the boundaries of whats possible with artificial intelligence and image generation.
                             </p>
                         </div>
                     </div>
