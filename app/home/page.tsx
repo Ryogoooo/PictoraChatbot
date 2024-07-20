@@ -20,7 +20,7 @@ const PictoraLandingPage = () => {
                 <section className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-purple-800 mb-4">Welcome to Pictora Chatbot</h2>
                     <p className="text-xl text-gray-600 mb-8">Your chatbot for Pictora</p>
-                    <Link href={'/chat'} >お話開始</Link>
+                    <Link href={'home/chat'} >お話開始</Link>
                 </section>
 
                 <section id="about" className="mb-16">

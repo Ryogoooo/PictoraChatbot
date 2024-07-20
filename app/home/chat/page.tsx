@@ -1,7 +1,9 @@
 // pages/index.tsx
+'use client'
 import { useState } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from './styles.module.css'
+import { runDifyWorkflow } from '@/lib/services/sendToDifyChatbot'
 
 type MessageType = '指示' | 'メモ' | '指示への回答'
 
@@ -18,6 +20,10 @@ export default function Home() {
         e.preventDefault()
         if (!input.trim()) return
 
+        //APIを呼び出す
+        runDifyWorkflow(input)
+
+
         const newMessage: Message = {
             type: input.startsWith('指示:') ? '指示' :
                 input.startsWith('メモ:') ? 'メモ' : '指示への回答',
@@ -30,15 +36,7 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title>チャットボットUI</title>
-                <meta name="description" content="Next.js で作成したチャットボットUI" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
             <main className={styles.main}>
-                <h1 className={styles.title}>チャットボットUI</h1>
-
                 <div className={styles.chatContainer}>
                     {messages.map((msg, index) => (
                         <div key={index} className={`${styles.message} ${msg.type === '指示' ? styles.right : styles.left}`}>
