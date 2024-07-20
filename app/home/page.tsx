@@ -1,6 +1,7 @@
 import React from 'react';
 import { User } from 'lucide-react';
-import Homecomponent from './component.tsx';
+import { signIn } from "next-auth/react"; // 正しいインポート
+import Link from 'next/link';
 
 const PictoraLandingPage = () => {
     return (
@@ -18,8 +19,8 @@ const PictoraLandingPage = () => {
             <main className="container mx-auto px-4 py-8">
                 <section className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-purple-800 mb-4">Welcome to Pictora Chatbot</h2>
-                    <p className="text-xl text-gray-600 mb-8">Your AI-powered image generation companion</p>
-                    <Homecomponent />
+                    <p className="text-xl text-gray-600 mb-8">Your chatbot for Pictora</p>
+                    <Link href={'home/chat'} >お話開始</Link>
                 </section>
 
                 <section id="about" className="mb-16">
